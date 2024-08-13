@@ -26,14 +26,11 @@ const Content = ({ section, onSectionChange }) => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-slate-800 via-slate-700 to-cyan-700">
-      <div className="relative bg-gray-900 p-8 rounded-3xl shadow-2xl shadow-slate-900 w-11/12 h-[90vh]">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-white text-2xl font-bold">Bence.</h1>
-          <Navbar onSectionChange={onSectionChange} />
+      <div className="relative bg-gray-900 rounded-3xl shadow-2xl shadow-slate-900 w-11/12 h-[90vh]">
+        <Navbar onSectionChange={onSectionChange} />
+        <div className="absolute inset-0 flex items-center justify-center text-white">
+          {renderSection()}
         </div>
-
-        {/* Tartalom */}
-        <div className="text-white text-center mt-16">{renderSection()}</div>
       </div>
     </div>
   );

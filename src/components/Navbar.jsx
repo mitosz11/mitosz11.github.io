@@ -11,8 +11,8 @@ const Navbar = ({ onSectionChange }) => {
   ];
 
   return (
-    <div className="absolute text-xl top-0 right-0 mt-4 mr-4">
-      <ul className="flex space-x-4">
+    <div className="absolute text-3xl top-0 right-0 pt-10 pr-16 z-10">
+      <ul className="flex gap-6">
         {menuItems.map((item) => (
           <MenuItem
             key={item.section}
