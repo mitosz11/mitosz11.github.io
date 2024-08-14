@@ -15,21 +15,25 @@ const Skills = ({ isVisible }) => {
   const progressBarRefs = useRef([]);
 
   useEffect(() => {
-    if (isVisible) {
-      setAnimationTriggered(true);
-      progressBarRefs.current.forEach((bar, index) => {
-        if (bar) {
-          bar.style.width = `${skillsData[index].level}%`;
-        }
-      });
-    } else {
-      setAnimationTriggered(false);
-      progressBarRefs.current.forEach((bar) => {
-        if (bar) {
-          bar.style.width = "0%";
-        }
-      });
-    }
+    const handleAnimation = () => {
+      if (isVisible) {
+        setAnimationTriggered(true);
+        progressBarRefs.current.forEach((bar, index) => {
+          if (bar) {
+            bar.style.width = `${skillsData[index].level}%`;
+          }
+        });
+      } else {
+        setAnimationTriggered(false);
+        progressBarRefs.current.forEach((bar) => {
+          if (bar) {
+            bar.style.width = "0%";
+          }
+        });
+      }
+    };
+
+    requestAnimationFrame(handleAnimation);
   }, [isVisible]);
 
   return (
@@ -43,9 +47,7 @@ const Skills = ({ isVisible }) => {
             className="w-16 h-16 object-contain"
           />
           <div className="flex-1">
-            <div className="text-xl mb-2 text-white">
-              {skill.name}
-            </div>
+            <div className="text-xl mb-2 text-white">{skill.name}</div>
             <div className="w-full bg-gray-600 rounded-full h-4 relative overflow-hidden">
               <div
                 ref={(el) => (progressBarRefs.current[index] = el)}
