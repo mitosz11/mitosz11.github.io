@@ -1,7 +1,7 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 
-const Navbar = ({ onSectionChange }) => {
+const Navbar = ({ section, onSectionChange }) => {
   const menuItems = [
     { label: "Home", section: "home" },
     { label: "About", section: "about" },
@@ -17,6 +17,7 @@ const Navbar = ({ onSectionChange }) => {
           <MenuItem
             key={item.section}
             label={item.label}
+            isActive={section === item.section}
             onClick={() => onSectionChange(item.section)}
           />
         ))}
