@@ -8,7 +8,6 @@ import Picture from "./Picture";
 const About = () => {
   return (
     <div className="flex items-center justify-around h-full w-full p-8">
-      <Picture />
       <div className="flex flex-col justify-center items-start gap-4 w-2/5">
         <h1 className="text-5xl font-bold text-cyan-300 py-8">About Me</h1>
         <p className="text-xl leading-relaxed text-gray-300">
@@ -53,6 +52,7 @@ const About = () => {
           </a>
         </div>
       </div>
+      <Picture />
     </div>
   );
 };
