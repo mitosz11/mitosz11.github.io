@@ -18,3 +18,35 @@
 .icon {
   transition: transform 0.3s ease;
 }
+
+/* Define the typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0);
+  }
+  100% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.typing-effect {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  animation: blink 0.5s step-end infinite;
+  line-height: 1.5;
+}
+
+.typing-effect.typing {
+  animation: typing 2s steps(30, end) 0.5s 1 normal both, blink 0.5s step-end infinite; /* Reduced typing duration */
+}
