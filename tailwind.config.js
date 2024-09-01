@@ -61,6 +61,9 @@ export default {
         90: "90%",
         100: "100%",
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],

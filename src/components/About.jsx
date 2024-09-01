@@ -30,14 +30,14 @@ const About = () => {
           passionate about continuous learning and excited to contribute to
           innovative projects in the tech industry.
         </p>
-        <div className="flex gap-4 py-6">
+        <div className="flex flex-wrap justify-center gap-4 py-6">
           <a
             className="icon-wrapper border border-cyan-400 rounded-full p-2"
             target="_blank"
             href="https://www.linkedin.com/in/bence-salg%C3%B3i-54a9111b6/"
             rel="noopener noreferrer"
           >
-            <SlSocialLinkedin className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialLinkedin className="text-cyan-400 text-3xl md:text-4xl" />
           </a>
           <a
             className="icon-wrapper border border-cyan-400 rounded-full p-2"
@@ -45,7 +45,7 @@ const About = () => {
             href="https://github.com/mitosz11"
             rel="noopener noreferrer"
           >
-            <SlSocialGithub className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialGithub className="text-cyan-400 text-3xl md:text-4xl" />
           </a>
           <a
             className="icon-wrapper border border-cyan-400 rounded-full p-2"
@@ -53,11 +53,11 @@ const About = () => {
             href="https://www.facebook.com/bence.salgoi"
             rel="noopener noreferrer"
           >
-            <SlSocialFacebook className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialFacebook className="text-cyan-400 text-3xl md:text-4xl" />
           </a>
         </div>
       </div>
-      <div className="w-full lg:w-3/5 mt-8 lg:mt-0 flex justify-end">
+      <div className="w-full lg:w-3/5 mt-8 lg:mt-0 flex justify-center lg:justify-end">
         <Picture />
       </div>
     </div>

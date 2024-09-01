@@ -9,26 +9,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-gray-800 p-4 fixed top-0 z-20 shadow-md">
-      <div className="flex items-center justify-center">
+    <nav className="w-full bg-gray-900 p-3 md:p-4 fixed top-0 z-20 shadow-lg">
+      <div className="flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
+        <img className="w-16" src="/logo.png" alt="logo" />
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
           <button
             onClick={toggleMenu}
             className="text-cyan-300 focus:outline-none text-2xl"
           >
-            ☰
+            {isOpen ? "✕" : "☰"}
           </button>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div
+          className={`hidden md:flex space-x-8 items-center text-2xl ${
+            isOpen ? "block" : "hidden"
+          }`}
+        >
           <Link
             to="home"
             smooth={true}
             duration={500}
-            className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+            className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
             Home
           </Link>
@@ -36,7 +42,7 @@ const Navbar = () => {
             to="about"
             smooth={true}
             duration={500}
-            className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+            className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
             About
           </Link>
@@ -44,7 +50,7 @@ const Navbar = () => {
             to="skills"
             smooth={true}
             duration={500}
-            className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+            className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
             Skills
           </Link>
@@ -52,7 +58,7 @@ const Navbar = () => {
             to="portfolio"
             smooth={true}
             duration={500}
-            className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+            className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
             Portfolio
           </Link>
@@ -60,7 +66,7 @@ const Navbar = () => {
             to="contact"
             smooth={true}
             duration={500}
-            className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+            className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
             Contact
           </Link>
@@ -69,7 +75,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`md:hidden flex flex-col items-center mt-4 ${
+        className={`md:hidden flex flex-col items-center mt-4 space-y-2 ${
           isOpen ? "block" : "hidden"
         }`}
       >
@@ -77,7 +83,7 @@ const Navbar = () => {
           to="home"
           smooth={true}
           duration={500}
-          className="text-cyan-300 hover:text-cyan-500 text-lg mb-2 cursor-pointer"
+          className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         >
           Home
@@ -86,7 +92,7 @@ const Navbar = () => {
           to="about"
           smooth={true}
           duration={500}
-          className="text-cyan-300 hover:text-cyan-500 text-lg mb-2 cursor-pointer"
+          className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         >
           About
@@ -95,7 +101,7 @@ const Navbar = () => {
           to="skills"
           smooth={true}
           duration={500}
-          className="text-cyan-300 hover:text-cyan-500 text-lg mb-2 cursor-pointer"
+          className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         >
           Skills
@@ -104,7 +110,7 @@ const Navbar = () => {
           to="portfolio"
           smooth={true}
           duration={500}
-          className="text-cyan-300 hover:text-cyan-500 text-lg mb-2 cursor-pointer"
+          className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         >
           Portfolio
@@ -113,7 +119,7 @@ const Navbar = () => {
           to="contact"
           smooth={true}
           duration={500}
-          className="text-cyan-300 hover:text-cyan-500 text-lg cursor-pointer"
+          className="text-cyan-300 hover:bg-cyan-600 hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out"
           onClick={() => setIsOpen(false)}
         >
           Contact

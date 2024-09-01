@@ -1,34 +1,17 @@
+import React, { useEffect } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Skills from "./components/Skills"; // Importáld be a Skills komponenst
+import Skills from "./components/Skills";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
-import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [skillsVisible, setSkillsVisible] = useState(false);
-
-  // Ellenőrzi, hogy a Skills szakasz látható-e
-  const handleScroll = () => {
-    const skillsSection = document.getElementById("skills");
-    if (skillsSection) {
-      const sectionTop = skillsSection.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
-      if (sectionTop < viewportHeight) {
-        setSkillsVisible(true);
-      } else {
-        setSkillsVisible(false);
-      }
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+   useEffect(() => {
+     toast.warning("This page is under development.")
+   }, []);
 
   return (
     <div className="bg-gray-900 text-white">
@@ -46,7 +29,7 @@ function App() {
         id="skills"
         className="min-h-screen flex items-center justify-center"
       >
-        <Skills isVisible={skillsVisible} />
+        <Skills />
       </section>
       <section
         id="portfolio"
@@ -60,6 +43,7 @@ function App() {
       >
         <Contact />
       </section>
+      <ToastContainer />
     </div>
   );
 }

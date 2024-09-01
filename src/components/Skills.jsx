@@ -1,39 +1,67 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 
 const skillsData = [
-  { name: "HTML5", level: 100, image: "/html5.png" },
-  { name: "CSS3", level: 100, image: "/css3.png" },
-  { name: "Tailwind", level: 100, image: "/tailwind.png" },
-  { name: "React", level: 100, image: "/react.png" },
-  { name: "JavaScript", level: 100, image: "/js.png" },
-  { name: "PostgreSQL", level: 100, image: "/postgreSQL.png" },
-  { name: "Node.js", level: 100, image: "/nodeJs.png" },
-  { name: "TypeScript", level: 100, image: "/ts.png" },
+  { name: "HTML5", category: "Frontend", image: "/html5.png" },
+  { name: "CSS3", category: "Frontend", image: "/css3.png" },
+  { name: "Tailwind", category: "Frontend", image: "/tailwind.png" },
+  { name: "React", category: "Frontend", image: "/react.png" },
+  { name: "JavaScript", category: "Frontend", image: "/js.png" },
+  { name: "PostgreSQL", category: "Backend", image: "/postgreSQL.png" },
+  { name: "Node.js", category: "Backend", image: "/nodeJs.png" },
+  { name: "TypeScript", category: "Frontend", image: "/ts.png" },
+  { name: "Git", category: "Tool", image: "/git.png" },
 ];
 
-const Skills = ({ isVisible }) => {
-  const progressBarRefs = useRef([]);
-  const [animationTriggered, setAnimationTriggered] = useState(false);
+const additionalSkills = [
+  { name: "Java", image: "/java.png" },
+  { name: "Angular", image: "/angular.png" },
+  { name: "Vue.js", image: "/vue.png" },
+  { name: "Python", image: "/python.png" },
+];
 
-  useEffect(() => {
-    if (isVisible && !animationTriggered) {
-      setAnimationTriggered(true);
-      setTimeout(() => {
-        progressBarRefs.current.forEach((bar, index) => {
-          if (bar) {
-            bar.style.transition = "stroke-dashoffset 2s ease";
-            bar.style.opacity = 1;
-            bar.style.strokeDashoffset =
-              282.6 - (282.6 * skillsData[index].level) / 100;
-          }
-        });
-      }, 100);
+const Skills = () => {
+  const groupedSkills = skillsData.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
     }
-  }, [isVisible, animationTriggered]);
+    acc[skill.category].push(skill);
+    return acc;
+  }, {});
 
   return (
-    <div className="flex flex-col items-center justify-center p-8 space-y-8 mx-">
+    <div className="flex flex-col items-center justify-center p-8 space-y-8">
       <h1 className="text-5xl font-bold text-cyan-400 py-8">Skills</h1>
+      <div className="flex flex-col md:flex-row w-full max-w-6xl justify-center gap-8">
+        {["Frontend", "Backend", "Tool"].map((category) => (
+          <div
+            key={category}
+            className="flex flex-col items-center w-full md:w-1/3 mb-8"
+          >
+            <h2 className="text-3xl font-bold text-cyan-300 mb-6">
+              {category}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-8">
+              {groupedSkills[category]?.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center gap-4 mb-6 w-28 sm:w-32 skill-item"
+                >
+                  <div className="relative w-24 h-24 flex items-center justify-center">
+                    <img
+                      src={skill.image}
+                      alt={skill.name}
+                      className="w-16 h-16 object-contain skill-image"
+                    />
+                  </div>
+                  <span className="text-cyan-300 font-semibold text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="text-center">
         <p className="text-xl text-gray-300 mb-4">
           I am passionate about continuous learning and expanding my skill set.
@@ -46,63 +74,31 @@ const Skills = ({ isVisible }) => {
           actively interested in learning and working with additional frameworks
           and languages such as:
         </p>
-        <ul className="list-disc list-inside text-xl text-gray-300 mb-4">
-          <li>Java</li>
-          <li>Angular</li>
-          <li>Vue.js</li>
-          <li>Python</li>
-        </ul>
+        <div className="grid grid-cols-2 gap-8 justify-center mb-4 max-w-md mx-auto">
+          {additionalSkills.map((skill) => (
+            <div
+              key={skill.name}
+              className="flex flex-col items-center gap-2 skill-item"
+            >
+              <div className="relative w-24 h-24 flex items-center justify-center">
+                <img
+                  src={skill.image}
+                  alt={skill.name}
+                  className="w-16 h-16 object-contain skill-image"
+                />
+              </div>
+              <span className="text-cyan-300 font-semibold text-center">
+                {skill.name}
+              </span>
+            </div>
+          ))}
+        </div>
         <p className="text-xl text-gray-300">
           I believe in the importance of staying updated and versatile in the
           tech industry. If you have any interesting projects or technologies
           that you think I should explore, feel free to reach out. I am always
           open to new challenges and opportunities for growth!
         </p>
-      </div>
-      <div className="flex flex-wrap justify-center gap-8">
-        {skillsData.map((skill, index) => (
-          <div
-            key={skill.name}
-            className="flex flex-col items-center gap-4 mb-6 w-28"
-          >
-            <div className="relative w-28 h-28 flex items-center justify-center">
-              <img
-                src={skill.image}
-                alt={skill.name}
-                className="w-16 h-16 object-contain"
-              />
-              <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-                <circle
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  stroke="#2d3748"
-                  strokeWidth="10"
-                  fill="none"
-                />
-                <circle
-                  ref={(el) => (progressBarRefs.current[index] = el)}
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  stroke="#22d3ee"
-                  strokeWidth="10"
-                  fill="none"
-                  strokeDasharray="282.6"
-                  strokeDashoffset="282.6"
-                  style={{
-                    opacity: 0,
-                    transition: "stroke-dashoffset 2s ease, opacity 0.5s",
-                    transform: "rotate(-90deg)",
-                    transformOrigin: "center",
-                    zIndex: 5,
-                  }}
-                />
-              </svg>
-            </div>
-            <span className="text-cyan-300 font-semibold">{skill.name}</span>
-          </div>
-        ))}
       </div>
     </div>
   );
