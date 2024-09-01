@@ -4,9 +4,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Navbar from "./components/Navbar";
-import Portfolio from "./components/Portfolio";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Projects from "./components/Projects";
 
 function App() {
    useEffect(() => {
@@ -32,10 +32,10 @@ function App() {
         <Skills />
       </section>
       <section
-        id="portfolio"
+        id="projects"
         className="min-h-screen flex items-center justify-center"
       >
-        <Portfolio />
+        <Projects />
       </section>
       <section
         id="contact"

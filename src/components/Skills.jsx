@@ -30,7 +30,7 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col items-center justify-center p-8 space-y-8">
-      <h1 className="text-5xl font-bold text-cyan-400 py-8">Skills</h1>
+      <h1 className="text-5xl font-bold text-cyan-400 pt-16">Skills</h1>
       <div className="flex flex-col md:flex-row w-full max-w-6xl justify-center gap-8">
         {["Frontend", "Backend", "Tool"].map((category) => (
           <div

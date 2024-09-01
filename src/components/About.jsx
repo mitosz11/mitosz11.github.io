@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className="flex flex-col lg:flex-row h-full w-full p-8 lg:p-16 items-center">
       <div className="flex flex-col gap-4 w-full lg:w-4/5 text-center lg:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold text-cyan-300 py-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-cyan-300 pt-16">
           About Me
         </h1>
         <p className="text-lg md:text-xl leading-relaxed text-gray-300">
