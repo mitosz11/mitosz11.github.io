@@ -14,7 +14,7 @@ function App() {
    }, []);
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="dark:bg-gray-900 bg-gray-200 dark:text-white text-gray-900">
       <Navbar />
       <section id="home" className="h-screen flex items-center justify-center">
         <Home />

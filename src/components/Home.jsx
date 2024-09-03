@@ -44,7 +44,7 @@ const Home = () => {
             Bence Salgói
           </h1>
           <span
-            className={`text-cyan-300 text-xl sm:text-2xl md:text-3xl lg:text-4xl ${animationClass}`}
+            className={`dark:text-cyan-300 text-cyan-700 text-xl sm:text-2xl md:text-3xl lg:text-4xl ${animationClass}`}
           >
             {texts[currentTextIndex]}
           </span>
@@ -56,35 +56,35 @@ const Home = () => {
         </span>
         <div className="flex flex-wrap gap-4 py-6 justify-center">
           <a
-            className="icon-wrapper border border-cyan-400 rounded-full p-2"
+            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.linkedin.com/in/bence-salg%C3%B3i-54a9111b6/"
           >
-            <SlSocialLinkedin className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialLinkedin className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
           </a>
           <a
-            className="icon-wrapper border border-cyan-400 rounded-full p-2"
+            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/mitosz11"
           >
-            <SlSocialGithub className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialGithub className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
           </a>
           <a
-            className="icon-wrapper border border-cyan-400 rounded-full p-2"
+            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
             target="_blank"
             rel="noopener noreferrer"
             href="https://www.facebook.com/bence.salgoi"
           >
-            <SlSocialFacebook className="text-cyan-400 text-3xl md:text-4xl icon" />
+            <SlSocialFacebook className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
           </a>
         </div>
         <div className="flex flex-wrap gap-6 justify-center">
           <a
             href="/hunCV.pdf"
             download
-            className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-500 rounded-lg hover:bg-cyan-300 transition duration-300"
+            className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-700 rounded-lg hover:bg-cyan-300 transition duration-300"
           >
             <IoDocumentTextOutline className="text-lg sm:text-xl md:text-2xl mr-2" />
             Hungarian CV
@@ -92,7 +92,7 @@ const Home = () => {
           <a
             href="/engCV.pdf"
             download
-            className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-500 rounded-lg hover:bg-cyan-300 transition duration-300"
+            className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-700 rounded-lg hover:bg-cyan-300 transition duration-300"
           >
             <IoDocumentTextOutline className="text-lg sm:text-xl md:text-2xl mr-2" />
             English CV
