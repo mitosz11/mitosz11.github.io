@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Projects from "./components/Projects";
+import i18n from "./i18n";
 
 function App() {
    useEffect(() => {
