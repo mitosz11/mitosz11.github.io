@@ -19,11 +19,11 @@ const About = () => {
           and PostgreSQL for backend development.
         </p>
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
-          I recently completed a Fullstack Developer program at Progmatic
-          Academy Kft., which has further honed my technical skills and prepared
-          me for a successful career in software development. My background
-          includes experience with Agile methodologies, Scrum, and version
-          control using Git and GitHub.
+          I recently completed a Fullstack Developer course at Progmatic Academy
+          Kft., which has further honed my technical skills and prepared me for
+          a successful career in software development. My background includes
+          experience with Agile methodologies, Scrum, and version control using
+          Git and GitHub.
         </p>
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
           Fluent in Hungarian and with a working knowledge of English, I am

@@ -1,10 +1,18 @@
-// src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import ThemeToggle from "./ThemeToggle";
+import LanguageSelector from "./LanguageSelector";
+import { useTranslation } from "react-i18next";
+import { GiSkills } from "react-icons/gi";
+import { MdEmail } from "react-icons/md";
+import { BiSolidBriefcase } from "react-icons/bi";
+import { IoHomeSharp } from "react-icons/io5";
+import { GoPersonFill } from "react-icons/go";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -15,7 +23,9 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo */}
-          <img className="w-24" src="/logo.png" alt="logo" />
+        <Link to="home" smooth={true} duration={500} className="flex-shrink-0">
+          <img className="w-24 cursor-pointer" src="/logo.png" alt="logo" />
+        </Link>
 
         {/* Navigation Links */}
         <div className="flex-grow flex justify-center gap-4 text-2xl">
@@ -25,7 +35,7 @@ const Navbar = () => {
             duration={500}
             className="text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:bg-cyan-600 hover:text-white dark:hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
-            Home
+            {t("home")}
           </Link>
           <Link
             to="about"
@@ -33,7 +43,7 @@ const Navbar = () => {
             duration={500}
             className="text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:bg-cyan-600 hover:text-white dark:hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
-            About
+            {t("about")}
           </Link>
           <Link
             to="skills"
@@ -41,7 +51,7 @@ const Navbar = () => {
             duration={500}
             className="text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:bg-cyan-600 hover:text-white dark:hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
-            Skills
+            {t("skills")}
           </Link>
           <Link
             to="projects"
@@ -49,7 +59,7 @@ const Navbar = () => {
             duration={500}
             className="text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:bg-cyan-600 hover:text-white dark:hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
-            Projects
+            {t("projects")}
           </Link>
           <Link
             to="contact"
@@ -57,24 +67,28 @@ const Navbar = () => {
             duration={500}
             className="text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:bg-cyan-600 hover:text-white dark:hover:text-white px-4 py-2 rounded transition duration-300 ease-in-out cursor-pointer"
           >
-            Contact
+            {t("contact")}
           </Link>
         </div>
 
-        {/* Dark Mode Toggle */}
+        {/* Language Selector and Dark Mode Toggle */}
+        <div className="flex items-center space-x-4">
+          <LanguageSelector /> {/* Nyelvválasztó beszúrása */}
           <ThemeToggle />
+        </div>
       </div>
 
       {/* Mobile Menu Button */}
       <div className="md:hidden flex items-center justify-between">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <img className="w-16" src="/logo.png" alt="logo" />
-        </div>
+        <Link to="home" smooth={true} duration={500} className="flex-shrink-0">
+          <img className="w-16 cursor-pointer" src="/logo.png" alt="logo" />
+        </Link>
 
-        {/* Dark Mode Toggle and Menu Button */}
-        <div className="flex items-center space-x-4">
+        {/* Language Selector, Dark Mode Toggle, and Menu Button */}
+        <div className="flex items-center space-x-5">
           <ThemeToggle />
+          <LanguageSelector /> {/* Nyelvválasztó beszúrása */}
           <button
             onClick={toggleMenu}
             className="text-cyan-700 dark:text-cyan-300 focus:outline-none text-2xl"
@@ -96,46 +110,51 @@ const Navbar = () => {
             to="home"
             smooth={true}
             duration={500}
-            className="text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
+            className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
             onClick={() => setIsOpen(false)}
           >
-            Home
+            <IoHomeSharp />
+            {t("home")}
           </Link>
           <Link
             to="about"
             smooth={true}
             duration={500}
-            className="text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
+            className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
             onClick={() => setIsOpen(false)}
           >
-            About
+            <GoPersonFill />
+            {t("about")}
           </Link>
           <Link
             to="skills"
             smooth={true}
             duration={500}
-            className="text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
+            className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
             onClick={() => setIsOpen(false)}
           >
-            Skills
+            <GiSkills />
+            {t("skills")}
           </Link>
           <Link
             to="projects"
             smooth={true}
             duration={500}
-            className="text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
+            className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
             onClick={() => setIsOpen(false)}
           >
-            Projects
+            <BiSolidBriefcase />
+            {t("projects")}
           </Link>
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            className="text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
+            className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 px-4 py-2 rounded transition duration-300 ease-in-out"
             onClick={() => setIsOpen(false)}
           >
-            Contact
+            <MdEmail />
+            {t("contact")}
           </Link>
         </div>
       </div>

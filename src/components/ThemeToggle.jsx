@@ -7,7 +7,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full"
+      className="rounded-full"
     >
       {isDarkMode ? (
         <BsSun className="text-yellow-300 text-3xl" />
