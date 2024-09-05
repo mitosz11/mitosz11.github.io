@@ -1,6 +1,8 @@
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ProjectCard = ({ image, title, description, technologies, link }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col bg-gray border dark:border-cyan-300 border-cyan-700 shadow-md rounded-lg overflow-hidden transition-transform transform hover:scale-105">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
@@ -26,7 +28,7 @@ const ProjectCard = ({ image, title, description, technologies, link }) => {
             rel="noopener noreferrer"
             className="dark:text-cyan-300 text-cyan-700 dark:hover:text-cyan-700 hover:text-cyan-300 font-semibold"
           >
-            View Project &rarr;
+            {t("view_project")} &rarr;
           </a>
         </div>
       </div>

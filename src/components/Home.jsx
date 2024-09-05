@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import {
   SlSocialLinkedin,
@@ -7,11 +8,12 @@ import {
 } from "react-icons/sl";
 import "../index.css";
 
-const texts = ["Fullstack Developer", "Software Developer", "Programmer"];
-
 const Home = () => {
+  const { t } = useTranslation();
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState("typing-effect typing");
+
+  const texts = t("titles", { returnObjects: true });
 
   useEffect(() => {
     const typingDuration = 2000;
@@ -23,7 +25,7 @@ const Home = () => {
     }, typingDuration + pauseDuration);
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [texts.length]);
 
   useEffect(() => {
     const typingTimeout = setTimeout(() => {
@@ -38,10 +40,10 @@ const Home = () => {
       <div className="flex flex-col gap-3 w-full lg:w-2/5 text-center">
         <div className="flex flex-col items-center justify-center text-center">
           <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-            Hello, it's me
+            {t("hello")}
           </h3>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
-            Bence Salgói
+            {t("name")}
           </h1>
           <span
             className={`dark:text-cyan-300 text-cyan-700 text-xl sm:text-2xl md:text-3xl lg:text-4xl ${animationClass}`}
@@ -50,9 +52,7 @@ const Home = () => {
           </span>
         </div>
         <span className="text-sm sm:text-base md:text-lg lg:text-xl">
-          I'm a passionate Fullstack Developer with a love for creating
-          intuitive and engaging web applications. Explore my portfolio to see
-          some of my latest work!
+          {t("intro_text")}
         </span>
         <div className="flex flex-wrap gap-4 py-6 justify-center">
           <a
@@ -87,7 +87,7 @@ const Home = () => {
             className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-700 rounded-lg hover:bg-cyan-300 transition duration-300"
           >
             <IoDocumentTextOutline className="text-lg sm:text-xl md:text-2xl mr-2" />
-            Hungarian CV
+            {t("hungarian_cv")}
           </a>
           <a
             href="/engCV.pdf"
@@ -95,7 +95,7 @@ const Home = () => {
             className="flex items-center justify-center w-full sm:w-auto md:w-48 h-12 text-base sm:text-lg font-semibold text-white hover:text-cyan-700 bg-cyan-700 rounded-lg hover:bg-cyan-300 transition duration-300"
           >
             <IoDocumentTextOutline className="text-lg sm:text-xl md:text-2xl mr-2" />
-            English CV
+            {t("english_cv")}
           </a>
         </div>
       </div>

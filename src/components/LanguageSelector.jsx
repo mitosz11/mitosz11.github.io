@@ -37,6 +37,9 @@ const LanguageSelector = () => {
     setIsOpen(false);
   };
 
+  // Determine the opposite language
+  const oppositeLanguage = selectedLanguage === "en" ? "hu" : "en";
+
   return (
     <div className="relative" ref={dropdownRef}>
       <button
@@ -47,20 +50,28 @@ const LanguageSelector = () => {
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded shadow-lg">
-          <button
-            onClick={() => handleLanguageChange("en")}
-            className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left flex items-center justify-center"
-          >
-            <img src="/en.jpg" alt="English flag" className="w-6 h-4 mr-2" />
-            EN
-          </button>
-          <button
-            onClick={() => handleLanguageChange("hu")}
-            className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left flex items-center justify-center"
-          >
-            <img src="/hun.png" alt="Hungarian flag" className="w-6 h-4 mr-2" />
-            HU
-          </button>
+          {selectedLanguage !== "en" && (
+            <button
+              onClick={() => handleLanguageChange("en")}
+              className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left flex items-center justify-center"
+            >
+              <img src="/en.jpg" alt="English flag" className="w-6 h-4 mr-2" />
+              EN
+            </button>
+          )}
+          {selectedLanguage !== "hu" && (
+            <button
+              onClick={() => handleLanguageChange("hu")}
+              className="px-6 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 w-full text-left flex items-center justify-center"
+            >
+              <img
+                src="/hun.png"
+                alt="Hungarian flag"
+                className="w-6 h-4 mr-2"
+              />
+              HU
+            </button>
+          )}
         </div>
       )}
     </div>

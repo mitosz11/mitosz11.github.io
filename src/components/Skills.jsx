@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const skillsData = [
   { name: "HTML5", category: "Frontend", image: "/html5.png" },
@@ -20,6 +21,8 @@ const additionalSkills = [
 ];
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   const groupedSkills = skillsData.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = [];
@@ -31,7 +34,7 @@ const Skills = () => {
   return (
     <div className="flex flex-col items-center justify-center p-8 space-y-8">
       <h1 className="text-5xl font-bold dark:text-cyan-300 text-cyan-700 pt-16">
-        Skills
+        {t("skills_title")}
       </h1>
       <div className="flex flex-col md:flex-row w-full max-w-6xl justify-center gap-8">
         {["Frontend", "Backend", "Tool"].map((category) => (
@@ -40,7 +43,7 @@ const Skills = () => {
             className="flex flex-col items-center w-full md:w-1/3 mb-8"
           >
             <h2 className="text-3xl font-bold dark:text-cyan-300 text-cyan-700 mb-6">
-              {category}
+              {t(category.toLowerCase())}
             </h2>
             <div className="flex flex-wrap justify-center gap-8">
               {groupedSkills[category]?.map((skill) => (
@@ -66,15 +69,10 @@ const Skills = () => {
       </div>
       <div className="text-center">
         <p className="text-xl dark:text-gray-300 text-black mb-4">
-          I am passionate about continuous learning and expanding my skill set.
-          I am eager to explore and master new technologies and tools. My goal
-          is to stay adaptable and proficient in the ever-evolving tech
-          landscape.
+          {t("passion_text")}
         </p>
         <p className="text-xl dark:text-gray-300 text-black mb-4">
-          With a solid foundation in frontend and backend technologies, I am
-          actively interested in learning and working with additional frameworks
-          and languages such as:
+          {t("interest_text")}
         </p>
         <div className="grid grid-cols-2 gap-8 justify-center mb-4 max-w-md mx-auto">
           {additionalSkills.map((skill) => (
@@ -96,10 +94,7 @@ const Skills = () => {
           ))}
         </div>
         <p className="text-xl dark:text-gray-300 text-black">
-          I believe in the importance of staying updated and versatile in the
-          tech industry. If you have any interesting projects or technologies
-          that you think I should explore, feel free to reach out. I am always
-          open to new challenges and opportunities for growth!
+          {t("believe_text")}
         </p>
       </div>
     </div>

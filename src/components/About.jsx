@@ -1,3 +1,5 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   SlSocialFacebook,
   SlSocialGithub,
@@ -6,31 +8,24 @@ import {
 import Picture from "./Picture";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col lg:flex-row h-full w-full p-8 lg:p-16 items-center">
       <div className="flex flex-col gap-4 w-full lg:w-4/5 text-center lg:text-left">
         <h1 className="text-4xl md:text-5xl font-bold dark:text-cyan-300 text-cyan-700 pt-16">
-          About Me
+          {t("about_me_title")}
         </h1>
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
-          I am a skilled Fullstack Developer with a solid foundation in both
-          frontend and backend technologies. My expertise includes HTML5, CSS3,
-          JavaScript, and React for frontend development, and Node.js, Express,
-          and PostgreSQL for backend development.
+          {t("about_me_1")}
         </p>
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
-          I recently completed a Fullstack Developer course at Progmatic Academy
-          Kft., which has further honed my technical skills and prepared me for
-          a successful career in software development. My background includes
-          experience with Agile methodologies, Scrum, and version control using
-          Git and GitHub.
+          {t("about_me_2")}
         </p>
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
-          Fluent in Hungarian and with a working knowledge of English, I am
-          passionate about continuous learning and excited to contribute to
-          innovative projects in the tech industry.
+          {t("about_me_3")}
         </p>
-        <div className="flex flex-wrap justify-center gap-4 py-6">
+        <div className="flex flex-wrap gap-4 py-6">
           <a
             className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
             target="_blank"
