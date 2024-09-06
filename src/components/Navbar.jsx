@@ -20,14 +20,14 @@ const Navbar = () => {
 
   return (
     <nav className="w-full dark:bg-gray-900 p-3 md:p-4 fixed top-0 z-20 shadow-lg bg-gray-300">
-      {/* Desktop Menu */}
+      
       <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto">
-        {/* Logo */}
+        
         <Link to="home" smooth={true} duration={500} className="flex-shrink-0">
           <img className="w-24 cursor-pointer" src="/logo.png" alt="logo" />
         </Link>
 
-        {/* Navigation Links */}
+        
         <div className="flex-grow flex justify-center gap-4 text-2xl">
           <Link
             to="home"
@@ -71,24 +71,24 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Language Selector and Dark Mode Toggle */}
+        
         <div className="flex items-center space-x-4">
-          <LanguageSelector /> {/* Nyelvválasztó beszúrása */}
+          <LanguageSelector /> 
           <ThemeToggle />
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
+     
       <div className="md:hidden flex items-center justify-between">
-        {/* Logo */}
+        
         <Link to="home" smooth={true} duration={500} className="flex-shrink-0">
           <img className="w-16 cursor-pointer" src="/logo.png" alt="logo" />
         </Link>
 
-        {/* Language Selector, Dark Mode Toggle, and Menu Button */}
+        
         <div className="flex items-center space-x-5">
           <ThemeToggle />
-          <LanguageSelector /> {/* Nyelvválasztó beszúrása */}
+          <LanguageSelector /> 
           <button
             onClick={toggleMenu}
             className="text-cyan-700 dark:text-cyan-300 focus:outline-none text-2xl"
@@ -98,13 +98,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      
       <div
         className={`md:hidden flex flex-col items-center ${
           isOpen ? "block" : "hidden"
         }`}
       >
-        {/* Navigation Links */}
+        
         <div className="flex flex-col items-center space-y-4 mt-4">
           <Link
             to="home"

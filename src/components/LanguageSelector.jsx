@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import i18n from "../i18n"; // Importáld az i18next konfigurációt
+import i18n from "../i18n"; 
 
 const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,7 +7,6 @@ const LanguageSelector = () => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    // Frissítsük a kiválasztott nyelvet, amikor a nyelv változik i18n-ben
     setSelectedLanguage(i18n.language);
   }, []);
 
@@ -18,11 +17,9 @@ const LanguageSelector = () => {
       }
     };
 
-    // Figyeljük az ablakon kívüli kattintásokat
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      // Takarítsuk el az eseményfigyelőt
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownRef]);
@@ -33,11 +30,10 @@ const LanguageSelector = () => {
 
   const handleLanguageChange = (lang) => {
     setSelectedLanguage(lang);
-    i18n.changeLanguage(lang); // Nyelv változtatása
+    i18n.changeLanguage(lang); 
     setIsOpen(false);
   };
 
-  // Determine the opposite language
   const oppositeLanguage = selectedLanguage === "en" ? "hu" : "en";
 
   return (

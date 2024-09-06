@@ -8,8 +8,8 @@ export default {
         "cyan-500": "#38b2ac",
         "cyan-700": "#2c7a7b",
         "gray-300": "#e2e8f0",
-        "gray-700": "#2d3748", // Add dark mode gray
-        "gray-900": "#1a202c", // Add very dark gray for dark mode
+        "gray-700": "#2d3748",
+        "gray-900": "#1a202c",
       },
       fontSize: {
         lg: "1.125rem",
