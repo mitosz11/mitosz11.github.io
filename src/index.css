@@ -56,5 +56,23 @@ body {
 }
 
 .typing-effect.typing {
-  animation: typing 2s steps(30, end) 0.5s 1 normal both, blink 0.5s step-end infinite; /* Reduced typing duration */
+  animation: typing 2s steps(30, end) 0.5s 1 normal both, blink 0.5s step-end infinite;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #38b2ac;
+  border-radius: 6px; 
+  border: 1px solid #e2e8f0; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2c7a7b;
 }
