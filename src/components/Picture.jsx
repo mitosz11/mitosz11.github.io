@@ -1,4 +1,4 @@
-export default function Picture() {
+const Picture = () => {
   return (
     <div>
       <img
@@ -9,3 +9,5 @@ export default function Picture() {
     </div>
   );
 }
+
+export default Picture;
