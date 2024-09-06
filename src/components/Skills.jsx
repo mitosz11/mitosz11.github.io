@@ -11,6 +11,10 @@ const skillsData = [
   { name: "Node.js", category: "Backend", image: "/nodeJs.png" },
   { name: "TypeScript", category: "Frontend", image: "/ts.png" },
   { name: "Git", category: "Tool", image: "/git.png" },
+  { name: "Express", category: "Backend", image: "/express.png" },
+  { name: "Vite", category: "Tool", image: "/vite.png" },
+  { name: "VS Code", category: "Tool", image: "/vscode.png" },
+  { name: "Prisma", category: "Backend", image: "/prisma.png" },
 ];
 
 const additionalSkills = [
@@ -33,14 +37,16 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col items-center justify-center p-8 space-y-8">
-      <h1 className="text-5xl font-bold dark:text-cyan-300 text-cyan-700 pt-16">
+      <h1 className="text-5xl font-bold dark:text-cyan-300 text-cyan-700 py-16">
         {t("skills_title")}
       </h1>
       <div className="flex flex-col md:flex-row w-full max-w-6xl justify-center gap-8">
-        {["Frontend", "Backend", "Tool"].map((category) => (
+        {["Frontend", "Backend", "Tool"].map((category, index) => (
           <div
             key={category}
-            className="flex flex-col items-center w-full md:w-1/3 mb-8"
+            className={`flex flex-col items-center w-full md:w-1/3 mb-8 ${
+              index === 1 ? "md:border-r md:border-l border-cyan-300" : ""
+            }`}
           >
             <h2 className="text-3xl font-bold dark:text-cyan-300 text-cyan-700 mb-6">
               {t(category.toLowerCase())}
