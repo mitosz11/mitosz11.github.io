@@ -25,7 +25,7 @@ const About = () => {
         <p className="text-lg md:text-xl leading-relaxed dark:text-gray-300 text-black">
           {t("about_me_3")}
         </p>
-        <div className="flex flex-wrap gap-4 py-6">
+        <div className="flex flex-wrap lg:justify-start justify-center gap-4 py-6">
           <a
             className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
             target="_blank"
