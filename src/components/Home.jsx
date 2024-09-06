@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import {
-  SlSocialLinkedin,
-  SlSocialGithub,
-  SlSocialFacebook,
-} from "react-icons/sl";
 import "../index.css";
+import SocialIcons from "./SocialIcons";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -55,30 +51,7 @@ const Home = () => {
           {t("intro_text")}
         </span>
         <div className="flex flex-wrap gap-4 py-6 justify-center">
-          <a
-            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/bence-salg%C3%B3i-54a9111b6/"
-          >
-            <SlSocialLinkedin className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
-          </a>
-          <a
-            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/mitosz11"
-          >
-            <SlSocialGithub className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
-          </a>
-          <a
-            className="icon-wrapper border dark:border-cyan-400 border-cyan-700 rounded-full p-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/bence.salgoi"
-          >
-            <SlSocialFacebook className="dark:text-cyan-400 text-cyan-700 dark:hover:border-cyan-300 hover:border-cyan-700 text-3xl md:text-4xl icon" />
-          </a>
+          <SocialIcons />
         </div>
         <div className="flex flex-wrap gap-6 justify-center">
           <a
