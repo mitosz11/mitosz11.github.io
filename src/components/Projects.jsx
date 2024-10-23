@@ -29,6 +29,19 @@ const Projects = () => {
       ],
       link: "https://kartkingdom.vercel.app",
     },
+    {
+      image: "/taskmanager.png",
+      title: t("task_manager_title"),
+      description: t("task_manager_description"),
+      technologies: [
+        { name: "React", icon: "/react.png" },
+        { name: "Tailwind", icon: "/tailwind.png" },
+        { name: "PostgreSQL", icon: "/postgreSQL.png" },
+        { name: "Node.js", icon: "/nodeJs.png" },
+        { name: "Express.js", icon: "/express.png" },
+      ],
+      link: "https://task-manager-version1.vercel.app/",
+    },
   ];
 
   return (

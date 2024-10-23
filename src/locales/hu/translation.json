@@ -28,6 +28,8 @@
   "gg_gaming_description": "Fedezze fel online boltunk széles választékát, biztonságos fizetési lehetőségekkel Barionon és PayPalon keresztül. Akár akció-, kaland- vagy stratégiai játékok rajongója, biztosan talál valamit, amit élvezhet. Azonnal letöltheti kedvenc játékait és elkezdheti a játékot még ma!",
   "kart_kingdom_title": "Kart Kingdom",
   "kart_kingdom_description": "Foglalja le gokartozási időpontjait és vásároljon kapcsolódó felszereléseket és kiegészítőket egy helyen. Platformunk zökkenőmentes élményt kínál biztonságos fizetési lehetőségekkel Barionon és PayPalon keresztül. Élvezze az online foglalás és vásárlás kényelmét, valamint az azonnali segítséget nyújtó chatet és a termékrating rendszert, amely segít megalapozott döntéseket hozni. Akár a következő versenyére készül, akár egyszerűen csak kiváló minőségű gokart felszerelést keres, nálunk megtalálja, amire szüksége van!",
+  "task_manager_title":"Task Manager",
+  "task_manager_description": "Az alkalmazás egy modern feladatkezelő rendszer, amely lehetővé teszi a felhasználók számára, hogy könnyedén nyomon követhessék napi teendőiket. A felhasználók létrehozhatnak új feladatokat, beállíthatják azok prioritását és kategóriáját, valamint megadhatják a határidőt. Az alkalmazás támogatja a felhasználói autentikációt, így mindenki a saját feladatlistáját kezelheti. A reszponzív dizájn garantálja, hogy az alkalmazás különböző eszközökön is kiválóan működjön.",
   "skills_title": "Készségek",
   "frontend": "Frontend",
   "backend": "Backend",
